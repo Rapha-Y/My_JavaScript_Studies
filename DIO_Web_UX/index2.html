@@ -22,7 +22,7 @@
             $hello.innerHTML += 'Me clicaram!<br/>';
         })
 
-        requestAnimationFrame(function() {
+        requestIdleCallback(function() {
             let content = '';
             for(let i = 0; i < 10000; i++) {
                 content += 'Me clicaram! '
