@@ -22,9 +22,14 @@
             $hello.innerHTML += 'Me clicaram!<br/>';
         })
 
-        for(let i = 0; i < 10000; i++) {
-            document.getElementById('hello').innerHTML += 'Me clicaram!<br/>'
-        }
+        setTimeout(function() {
+            let content = '';
+            for(let i = 0; i < 10000; i++) {
+                content += 'Me clicaram! '
+            }
+
+            $hello.innerHTML = content;
+        }, 1000)
     </script>
 </body>
 </html>
