@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Processamento único</title>
+</head>
+<body>
+    <img src="./img/musik.gif" alt="Fire Emblem lords playing music" width="320px">
+    <button id="btn-js">Click me</button>
+    <h2 id="hello">
+
+    </h2>
+    <script>
+        const $button = document.getElementById('btn-js');
+        const $hello = document.getElementById('hello');
+
+        $button.addEventListener("click", e => {
+            e.preventDefault();
+
+            $hello.innerHTML += 'Me clicaram!<br/>';
+        })
+
+        for(let i = 0; i < 10000; i++) {
+            document.getElementById('hello').innerHTML += 'Me clicaram!<br/>'
+        }
+    </script>
+</body>
+</html>
