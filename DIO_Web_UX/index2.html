@@ -7,29 +7,30 @@
     <title>Processamento único</title>
 </head>
 <body>
-    <img src="./img/musik.gif" alt="Fire Emblem lords playing music" width="320px">
-    <button id="btn-js">Click me</button>
-    <h2 id="hello">
+    <style>
+        .title {
+            position: relative;
+            transform: translateX(0);
+            opacity: 0;
+            transition: all 1s linear;
+        }
 
+        .title.animate {
+            transform: translateX(500px);
+            opacity: 1;
+        }
+    </style>
+
+    <h2 class="title">
+        Título da página
     </h2>
+
     <script>
-        const $button = document.getElementById('btn-js');
-        const $hello = document.getElementById('hello');
-
-        $button.addEventListener("click", e => {
-            e.preventDefault();
-
-            $hello.innerHTML += 'Me clicaram!<br/>';
-        })
-
-        requestIdleCallback(function() {
-            let content = '';
-            for(let i = 0; i < 10000; i++) {
-                content += 'Me clicaram! '
-            }
-
-            $hello.innerHTML = content;
-        })
+        setTimeout(function() {
+            document.querySelector('.title').classList.add('animate');
+        }, 1)
     </script>
 </body>
 </html>
+
+<!--Animation command: document.querySelector('.title').classList.add('animate')-->
