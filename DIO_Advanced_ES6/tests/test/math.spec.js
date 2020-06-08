@@ -1,5 +1,6 @@
 const assert = require("assert");
 const Math = require("../src/math.js");
+const expect = require("chai").expect;
 
 let value = 0;
 
@@ -16,14 +17,25 @@ describe("Math class", function() {
 
         const math = new Math();
         math.add(value, 5, (value) => {
-            assert.equal(value, 10);
+            expect(value).to.equal(10);
             done();
         });
     });
 
     it("Sum two numbers", function() {
-        const math = new Math();
-        assert.equal(math.sum(value, 5), 5);
+        //const math = new Math();
+        //expect(math.sum(value, 5)).to.equal(5);
+        
+        const obj = {
+            name: "Emily Strauss"
+        }
+        const obj2 = {
+            name: "Emily Strauss"
+        }
+        
+        //expect(obj).to.have.property("name");
+        //expect(obj).to.have.property("name").equal("Emily Strauss");
+        expect(obj).to.deep.equal(obj2);
     });
 
     /*
